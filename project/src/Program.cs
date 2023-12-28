@@ -33,6 +33,11 @@ class Program
             Day4 day = new();
             day.Whole();
         }
+        else if (args[0] == "day5")
+        {
+            Day5 day = new();
+            day.Whole();
+        }
     }
 }
 
