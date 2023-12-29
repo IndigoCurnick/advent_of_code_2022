@@ -4,7 +4,7 @@ internal class Day1
     {
 
         Console.WriteLine("Day 1");
-        string file = "day1.txt";
+        string file = "data/day1.txt";
         int calories = this.Part1(file);
 
         Console.WriteLine(String.Format("Day 1 Part 1 {0}", calories.ToString()));

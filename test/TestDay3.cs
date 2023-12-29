@@ -8,7 +8,7 @@ public class TestDay3
     public void Test1()
     {
         Day3 day = new Day3();
-        int num = day.Part1("day3_demo.txt");
+        int num = day.Part1("data_demo/day3_demo.txt");
 
         Assert.Equal(157, num);
     }
@@ -17,7 +17,7 @@ public class TestDay3
     public void Test2()
     {
         Day3 day = new Day3();
-        int num = day.Part2("day3_demo.txt");
+        int num = day.Part2("data_demo/day3_demo.txt");
 
         Assert.Equal(num, 70);
     }

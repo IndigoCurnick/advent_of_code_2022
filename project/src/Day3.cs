@@ -2,7 +2,7 @@ internal class Day3
 {
     public void Whole()
     {
-        string file = "day3.txt";
+        string file = "data/day3.txt";
         int num = this.Part1(file);
         Console.WriteLine(String.Format("Day 3 Part 1 {0}", num.ToString()));
         int num2 = this.Part2(file);

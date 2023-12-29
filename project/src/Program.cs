@@ -54,7 +54,7 @@ public class DataReader
         {
             parent = Directory.GetParent(parent).FullName;
         }
-        string path = Path.Combine(parent, "data", file);
+        string path = Path.Combine(parent, file);
 
         try
         {

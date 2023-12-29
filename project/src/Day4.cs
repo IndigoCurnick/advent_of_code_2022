@@ -2,7 +2,7 @@ internal class Day4
 {
     public void Whole()
     {
-        string file = "day4.txt";
+        string file = "data/day4.txt";
         int cond = this.Part1(file);
         Console.WriteLine(String.Format("Day 4 Part 1 {0}", cond.ToString()));
 

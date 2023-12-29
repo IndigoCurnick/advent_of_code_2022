@@ -8,38 +8,38 @@ internal class Day5
 
     }
 
-    public string Part1(string file)
-    {
-        string[] lines = DataReader.ReadLines(file);
+    // public string Part1(string file)
+    // {
+    //     string[] lines = DataReader.ReadLines(file);
 
-        Dictionary<int, Stack<string>> stack = new();
+    //     Dictionary<int, Stack<string>> stack = new();
 
-        foreach (string line in lines)
-        {
-            if (line == "")
-            {
-                continue;
-            }
+    //     foreach (string line in lines)
+    //     {
+    //         if (line == "")
+    //         {
+    //             continue;
+    //         }
 
-            if (line.Contains("["))
-            {
+    //         if (line.Contains("["))
+    //         {
 
-                continue;
-            }
+    //             continue;
+    //         }
 
-            if (line.Contains("move"))
-            {
-                List<string> split = line.Split(" ").ToList();
-                int num = int.Parse(split[1]);
-                int from = int.Parse(split[3]);
-                int to = int.Parse(split[5]);
+    //         if (line.Contains("move"))
+    //         {
+    //             List<string> split = line.Split(" ").ToList();
+    //             int num = int.Parse(split[1]);
+    //             int from = int.Parse(split[3]);
+    //             int to = int.Parse(split[5]);
 
-                for (int i = 0; i < num; i++)
-                {
-                    stack[to].Push(stack[from].Pop());
-                }
-            }
-        }
+    //             for (int i = 0; i < num; i++)
+    //             {
+    //                 stack[to].Push(stack[from].Pop());
+    //             }
+    //         }
+    //     }
 
-    }
+    // }
 }

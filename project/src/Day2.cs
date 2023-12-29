@@ -2,7 +2,7 @@ internal class Day2
 {
     public void Whole()
     {
-        string data = "day2.txt";
+        string data = "data/day2.txt";
         int score = this.Part1(data);
         Console.WriteLine(String.Format("Day 2 Part 1 {0}", score.ToString()));
         int secondscore = this.Part2(data);
