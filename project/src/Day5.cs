@@ -1,45 +1,97 @@
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 internal class Day5
 {
     public void Whole()
     {
+        string file = "data/day5.txt";
+        string cond = this.Part1(file);
+        Console.WriteLine(String.Format("Day 5 Part 1 {0}", cond.ToString()));
 
+        // int num = this.Part2(file);
+        // Console.WriteLine(String.Format("Day 4 Part 2 {0}", num.ToString()));
     }
 
-    // public string Part1(string file)
-    // {
-    //     string[] lines = DataReader.ReadLines(file);
+    public string Part1(string file)
+    {
+        string[] lines = DataReader.ReadLines(file);
 
-    //     Dictionary<int, Stack<string>> stack = new();
+        Dictionary<int, LinkedList<char>> stack = new();
 
-    //     foreach (string line in lines)
-    //     {
-    //         if (line == "")
-    //         {
-    //             continue;
-    //         }
+        bool moving = false;
 
-    //         if (line.Contains("["))
-    //         {
+        foreach (string line in lines)
+        {
+            if (line == "")
+            {
+                moving = true;
+                continue;
+            }
 
-    //             continue;
-    //         }
+            if (!moving)
+            {
+                double count = line.Length;
 
-    //         if (line.Contains("move"))
-    //         {
-    //             List<string> split = line.Split(" ").ToList();
-    //             int num = int.Parse(split[1]);
-    //             int from = int.Parse(split[3]);
-    //             int to = int.Parse(split[5]);
+                double ceilingVal = Math.Ceiling(count / 4.0);
 
-    //             for (int i = 0; i < num; i++)
-    //             {
-    //                 stack[to].Push(stack[from].Pop());
-    //             }
-    //         }
-    //     }
+                for (int i = 0; i < ceilingVal; i++)
+                {
+                    int position = 1 + i * 4;
 
-    // }
+                    char c;
+                    try
+                    {
+                        c = line[position];
+                    }
+                    catch (Exception)
+                    {
+                        continue;
+                    }
+
+
+
+
+                    if (c == ' ')
+                    {
+                        continue;
+                    }
+
+                    if (!stack.ContainsKey(i))
+                    {
+                        stack[i] = new LinkedList<char>();
+                    }
+
+                    stack[i].AddLast(c);
+                }
+            }
+            else
+            {
+                List<string> split = line.Split(" ").ToList();
+                int num = int.Parse(split[1]);
+                int from = int.Parse(split[3]) - 1;
+                int to = int.Parse(split[5]) - 1;
+
+                for (int i = 0; i < num; i++)
+                {
+
+                    stack[to].AddFirst(stack[from].First.Value);
+                    stack[from].RemoveFirst();
+                }
+            }
+        }
+
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < stack.Count; i++)
+        {
+            sb.Append(stack[i].First.Value);
+        }
+
+        string result = sb.ToString();
+
+        return result;
+
+    }
 }
