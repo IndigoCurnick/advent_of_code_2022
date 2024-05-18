@@ -13,13 +13,13 @@ public class TestDay5
         Assert.Equal("CMZ", output);
     }
 
-    // [Fact]
-    // public void Test2()
-    // {
-    //     Day4 day = new Day5();
-    //     int num = day.Part2("data_demo/day4_demo.txt");
+    [Fact]
+    public void Test2()
+    {
+        Day5 day = new Day5();
+        string output = day.Part2("data_demo/day5_demo.txt");
 
-    //     Assert.Equal(4, num);
-    // }
+        Assert.Equal("MCD", output);
+    }
 
 }
